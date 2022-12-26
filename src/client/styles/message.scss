@@ -1,0 +1,20 @@
+%message {
+    padding: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.error {
+    @extend %message;
+    border-radius: 3px;
+    background-color: #34A6BF;
+}
+
+#score,
+#agreement,
+#subjectivity,
+#confidence,
+#irony,
+#text {
+    color: black;
+    @extend %message;
+}

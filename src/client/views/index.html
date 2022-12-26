@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>FEND Capstone Travel App</title>
+</head>
+
+<body>
+
+    <header>
+    </header>
+
+    <main>
+        <section class="input">
+            <h1>FEND Capstone Travel App</h1>
+            <form class="" onsubmit="return Client.handleSubmit(event)">
+                <input id="name" type="text" name="input" value="" placeholder="Enter URL">
+                <input type="submit" name="" value="Submit" onclick="return Client.handleSubmit(event)"
+                    onsubmit="return Client.handleSubmit(event)">
+            </form>
+        </section>
+
+        <section class="output">
+            <div class="results">
+                <h2>Results:</h2>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+    </footer>
+
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
+</body>
+
+</html>
