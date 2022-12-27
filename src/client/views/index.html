@@ -1,43 +1,76 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
 
 <head>
-    <meta charset="utf-8">
-    <title>FEND Capstone Travel App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,500i,700|Playfair+Display:400,700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2162da8111.js" crossorigin="anonymous"></script>
+    <title>Travel Planner</title>
 </head>
 
 <body>
-
-    <header>
-    </header>
-
-    <main>
-        <section class="input">
-            <h1>FEND Capstone Travel App</h1>
-            <form class="" onsubmit="return Client.handleSubmit(event)">
-                <input id="name" type="text" name="input" value="" placeholder="Enter URL">
-                <input type="submit" name="" value="Submit" onclick="return Client.handleSubmit(event)"
-                    onsubmit="return Client.handleSubmit(event)">
-            </form>
-        </section>
-
-        <section class="output">
-            <div class="results">
-                <h2>Results:</h2>
+    <div id="parent-container">
+        <header>
+            <nav>
+                <div id="title">
+                    <div id="page-title">Travel Planner</div>
+                </div>
+                <ul id="menu">
+                    <li class="item">
+                        <a class="nav-link selected" href="index.html">Home</a>
+                    </li>
+                    <li class="item">
+                        <a class="nav-link" href="./saved-trips.html">Saved Trips</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <section id="content">
+            <div class="text-gradient">
+                <div class="user-input-placeholder">
+                    <input type="text" placeholder="Destination" id="destination" aria-label="Destination" required>
+                    <input type="date" placeholder="Start Date" id="date_start" aria-label="Date" required>
+                    <input type="date" placeholder="Return Date" id="date_end" aria-label="Date" required>
+                    <input type="submit" id="button_search" value="Search"></button>
+                </div>
             </div>
-
         </section>
-    </main>
+        <div class="popover-modal">
+            <div class="mask" role="dialog"></div>
+            <div class="modal" role="alert">
+                <div class="modal-header">
+                    <h4 class="modal-header__text"></h4>
+                    <button class="close" role="button" aria-label="Close">X</button>
+                </div>
+                <div class="modal-body left-side">
+                    <img class="destination__img" src="" alt="Popular Image for Destination">
+                </div>
+                <div class="modal-body right-side">
+                    <p><b>Trip to:</b> <span class="modal_destination"></span></p>
+                    <p><b>Departure: </b> <span class="start_date"></span></p>
+                    <p><b>Return:</b> <span class="end_date"></span></p>
+                    <p><b>Duration:</b> <span class="duration"></span></p>
+                    <span class="trip_countdown"></span>
+                    <span class="trip_weather"></span>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" id="btn-cancel_modal">Cancel</button>
+                    <button class="btn btn-secondary" id="btn-save_trip">Save Trip</button>
+                </div>
+            </div>
+        </div>
 
-    <footer>
-    </footer>
-
+        <footer>
+        </footer>
+    </div>
     <script>
         // Check that service workers are supported
         if ('serviceWorker' in navigator) {
             // Use the window load event to keep the page load performant
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js');
+                navigator.serviceWorker.register('./service-worker.js');
             });
         }
     </script>

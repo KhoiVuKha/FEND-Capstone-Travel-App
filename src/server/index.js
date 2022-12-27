@@ -44,6 +44,7 @@ app.get('/test', function(req, res) {
 });
 
 app.get('/', function(req, res) {
+    // Home page
     res.sendFile('dist/index.html');
 })
 
@@ -55,6 +56,22 @@ async function geoNamesLocation(req, res) {
     );
     res.send(response.data);
 };
+
+app.post('/weather-bit-info', weatherBitInfo);
+async function weatherBitInfo(req, res) {
+    const response = await axios.get(
+        `${req.body.baseURL}&key=${weatherBitApiKey}`
+    );
+    res.send(response.data);
+}
+
+app.post('/pixa-bay-images', pixaBayImages);
+async function pixaBayImages(req, res) {
+    const response = await axios.get(
+        `${req.body.baseURL}&key=${pixaBayApiKey}`
+    );
+    res.send(response.data);
+}
 
 // Setup Server
 // designates what port the app will listen to for incoming requests
