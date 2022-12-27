@@ -1,6 +1,7 @@
 const dotenv = require('dotenv');
 dotenv.config();
 const fetch = require('node-fetch');
+const axios = require('axios');
 
 const geoNamesUserName = process.env.GEONAMES_USERNAME;
 const weatherBitApiKey = process.env.WEATHERBIT_API_KEY;
@@ -49,28 +50,43 @@ app.get('/', function(req, res) {
 })
 
 // POST routes
-app.post('/geonames-location', geoNamesLocation);
+app.post('/geo-name-locations', geoNamesLocation);
 async function geoNamesLocation(req, res) {
-    const response = await axios.get(
-        `${req.body.baseURL}&username=${geoNamesUserName}`
-    );
-    res.send(response.data);
+    try {
+        console.log("[Server] POST route geoNamesLocation");
+        const response = await axios.get(
+            `${req.body.baseURL}&username=${geoNamesUserName}`
+        );
+        res.send(response.data);
+    } catch (error) {
+        console.error("error", error);
+    }
 };
 
 app.post('/weather-bit-info', weatherBitInfo);
 async function weatherBitInfo(req, res) {
-    const response = await axios.get(
-        `${req.body.baseURL}&key=${weatherBitApiKey}`
-    );
-    res.send(response.data);
+    try {
+        console.log("[Server] POST route weatherBitInfo");
+        const response = await axios.get(
+            `${req.body.baseURL}&key=${weatherBitApiKey}`
+        );
+        res.send(response.data);
+    } catch (error) {
+        console.error("error", error);
+    }
 }
 
 app.post('/pixa-bay-images', pixaBayImages);
 async function pixaBayImages(req, res) {
-    const response = await axios.get(
-        `${req.body.baseURL}&key=${pixaBayApiKey}`
-    );
-    res.send(response.data);
+    try {
+        console.log("[Server] POST route pixaBayImages");
+        const response = await axios.get(
+            `${req.body.baseURL}&key=${pixaBayApiKey}`
+        );
+        res.send(response.data);
+    } catch (error) {
+        console.error("error", error);
+    }
 }
 
 // Setup Server
