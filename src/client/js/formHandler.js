@@ -35,15 +35,15 @@ const handleSearchEvent = async (event) => {
 
     // Get user input from UI
     trip.destination = getDestination();
-    trip.startData = getStartingDate();
+    trip.startDate = getStartingDate();
     trip.endDate = getReturnDate();
-    let startDateInMs = new Date(trip.startData);
+    let startDateInMs = new Date(trip.startDate);
     startDateInMs = startDateInMs.getTime();
     let endDateInMs = new Date(trip.endDate);
     endDateInMs = endDateInMs.getTime();
 
     console.log("[Client] User input destination: ", trip.destination);
-    console.log("[Client] User input startData: ", trip.startData);
+    console.log("[Client] User input startDate: ", trip.startDate);
     console.log("[Client] User input endDate: ", trip.endDate);
     console.log("startDateInMs: ", startDateInMs);
     console.log("endDateInMs: ", endDateInMs);
@@ -76,7 +76,7 @@ const handleSearchEvent = async (event) => {
         );
 
         //TODO: updateModal(trip);
-    } else if (trip.startDate > trip.endDate) {
+    } else if (startDateInMs > endDateInMs) {
         alert('Return date should be after the start date');
     } else {
         alert('Please enter the destination, start date and return date');
@@ -121,11 +121,6 @@ if (window.location.href.includes('trips')) {
         });
     }
 }
-
-/* TODO: Function to POST data */
-const postData = async (url = "", data = {}) => {
-    console.log("[Client] postData");
-};
 
 /* TODO: Function to update UI */
 const updateUI = (data) => {
