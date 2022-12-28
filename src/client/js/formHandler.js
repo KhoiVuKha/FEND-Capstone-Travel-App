@@ -5,6 +5,7 @@ import { getGeonameData } from './getGeoNameData.js';
 import { getWeatherForecast } from './getWeatherForecast.js';
 import { calculateDaysToGo } from './calculateDaysToGo.js';
 import { getPixabayImages } from './getPixabayImages.js';
+import { updateModal } from './userInterfaceRenderer';
 
 /* Global variables */
 const trip = {};
@@ -75,7 +76,7 @@ const handleSearchEvent = async (event) => {
             trip.destination
         );
 
-        //TODO: updateModal(trip);
+        updateModal(trip);
     } else if (startDateInMs > endDateInMs) {
         alert('Return date should be after the start date');
     } else {
