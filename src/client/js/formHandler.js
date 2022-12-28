@@ -4,6 +4,7 @@ import { getDestination, getStartingDate, getReturnDate } from './formInfoGetter
 import { getGeonameData } from './getGeoNameData.js';
 import { getWeatherForecast } from './getWeatherForecast.js';
 import { calculateDaysToGo } from './calculateDaysToGo.js';
+import { getPixabayImages } from './getPixabayImages.js';
 
 /* Global variables */
 const trip = {};
@@ -65,7 +66,14 @@ const handleSearchEvent = async (event) => {
         console.log("Weather Forecast: ", trip.weatherForecast);
 
         // Get Image of destination
-        //trip.image = await getImageUrl(trip.destination, trip.country);
+        trip.image = await getPixabayImages (
+            'photo',
+            'travel',
+            true,
+            'popular',
+            'horizontal',
+            trip.destination
+        );
 
         //TODO: updateModal(trip);
     } else if (trip.startDate > trip.endDate) {

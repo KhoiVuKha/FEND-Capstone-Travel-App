@@ -76,7 +76,7 @@ async function weatherBitInfo(req, res) {
     }
 }
 
-app.post('/pixa-bay-images', pixaBayImages);
+app.post('/pixabay-images', pixaBayImages);
 async function pixaBayImages(req, res) {
     try {
         console.log("[Server] POST route pixaBayImages");
