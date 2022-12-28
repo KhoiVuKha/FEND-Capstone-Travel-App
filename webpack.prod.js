@@ -41,6 +41,10 @@ module.exports = {
             template: "./src/client/views/index.html",
             filename: "./index.html",
         }),
+        new HtmlWebPackPlugin({
+            template: './src/client/views/saved-trips.html',
+            filename: './saved-trips.html',
+        }),
         new MiniCssExtractPlugin({filename: '[name].css'}),
         new WorkboxPlugin.GenerateSW()
     ]

@@ -87,4 +87,29 @@ const getWeatherInfo = (weatherForecast, daysLeft, date) => {
     return weather;
 }
 
-export { updateModal };
+const displaySavedTrip = (trip) => {
+    const tripStart = getTripDate(trip.startDate);
+    const tripEnd = getTripDate(trip.endDate);
+    const duration = countdown(trip.startDate, trip.endDate);
+    const daysLeft = countdown(new Date(), tripStart);
+    const weather = getWeatherInfo(trip.weatherForecast, daysLeft, tripStart);
+    const section = document.createElement('section');
+
+    let pixabayData = trip.image;
+    const div = document.createElement('div');
+    div.classList.add('trip');
+    div.innerHTML = `<div class="modal-body left-side">
+                        <img class="destination__img" src="${pixabayData.hits[0].webformatURL}" alt="Popular Image for Destination">
+                    </div>
+                    <div class="modal-body right-side">
+                        <p><b>Trip to:</b> <span class="destination">${trip.destination}</span></p>
+                        <p><b>Departure: </b> <span class="start_date">${tripStart}</span></p>
+                        <p><b>Return:</b> <span class="end_date">${tripEnd}</span></p>
+                        <p><b>Duration:</b> <span class="duration">${duration}</span></p>
+                        <span class="trip_countdown">Your trip to ${trip.destination} is ${daysLeft} days away.</span>
+                    </div>`;
+    section.appendChild(div);
+    document.querySelector('.saved-trips').appendChild(section);
+}
+
+export { updateModal, displaySavedTrip };

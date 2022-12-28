@@ -5,7 +5,7 @@ import { getGeonameData } from './getGeoNameData.js';
 import { getWeatherForecast } from './getWeatherForecast.js';
 import { calculateDaysToGo } from './calculateDaysToGo.js';
 import { getPixabayImages } from './getPixabayImages.js';
-import { updateModal } from './userInterfaceRenderer';
+import { updateModal, displaySavedTrip } from './userInterfaceRenderer';
 
 /* Global variables */
 const trip = {};
@@ -16,9 +16,9 @@ const cancelBtn = document.getElementById('btn-cancel-trip');
 const createNewTripBtn = document.getElementById('btn-add-new-trip');
 const deleteAllTripsBtn = document.getElementById('btn-delete-all');
 
-const handleSaveTripEvent = async(e) => {
+const handleSaveTripEvent = async (event) => {
     console.log("::: Handle Save Trip Event :::");
-    e.preventDefault();
+    event.preventDefault();
     trips.push(trip);
     localStorage.setItem('trips', JSON.stringify(trips));
     window.location.href = 'saved-trips.html';
@@ -76,6 +76,7 @@ const handleSearchEvent = async (event) => {
             trip.destination
         );
 
+        // Display plan trip
         updateModal(trip);
     } else if (startDateInMs > endDateInMs) {
         alert('Return date should be after the start date');
@@ -118,15 +119,10 @@ if (window.location.href.includes('trips')) {
     let trips = JSON.parse(window.localStorage.getItem('trips'));
     if (trips) {
         trips.forEach(trip => {
-            //displaySavedTrip(trip);
+            displaySavedTrip(trip);
         });
     }
 }
-
-/* TODO: Function to update UI */
-const updateUI = (data) => {
-    console.log("[Client] updateUI");
-};
 
 export {
     handleSearchEvent
