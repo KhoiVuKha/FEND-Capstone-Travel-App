@@ -2,6 +2,8 @@ const $ = require('jquery');
 
 import { getDestination, getStartingDate, getReturnDate } from './formInfoGetter.js';
 import { getGeonameData } from './getGeoNameData.js';
+import { getWeatherForecast } from './getWeatherForecast.js';
+import { calculateDaysToGo } from './calculateDaysToGo.js';
 
 /* Global variables */
 const trip = {};
@@ -58,7 +60,9 @@ const handleSearchEvent = async (event) => {
         console.log("countryCode: ", trip.countryCode);
 
         // Get Weather forcast
-        //trip.weatherForecast = await getWeatherForecast(trip.latitude, trip.longitude);
+        const daysToGo = calculateDaysToGo(trip.startDate);
+        trip.weatherForecast = await getWeatherForecast(daysToGo, trip.latitude, trip.longitude);
+        console.log("Weather Forecast: ", trip.weatherForecast);
 
         // Get Image of destination
         //trip.image = await getImageUrl(trip.destination, trip.country);

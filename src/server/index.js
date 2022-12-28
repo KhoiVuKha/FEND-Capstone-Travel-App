@@ -54,22 +54,22 @@ app.post('/geo-name-locations', geoNamesLocation);
 async function geoNamesLocation(req, res) {
     try {
         console.log("[Server] POST route geoNamesLocation");
-        const response = await axios.get(
-            `${req.body.baseURL}&username=${geoNamesUserName}`
-        );
+        let url = `${req.body.baseURL}&username=${geoNamesUserName}`;
+        console.log("url: ", url);
+        const response = await axios.get(url);
         res.send(response.data);
     } catch (error) {
         console.error("error", error);
     }
 };
 
-app.post('/weather-bit-info', weatherBitInfo);
+app.post('/weather-bit-data', weatherBitInfo);
 async function weatherBitInfo(req, res) {
     try {
         console.log("[Server] POST route weatherBitInfo");
-        const response = await axios.get(
-            `${req.body.baseURL}&key=${weatherBitApiKey}`
-        );
+        let url = `${req.body.baseURL}&key=${weatherBitApiKey}`;
+        console.log("url: ", url);
+        const response = await axios.get(url);
         res.send(response.data);
     } catch (error) {
         console.error("error", error);
@@ -80,9 +80,9 @@ app.post('/pixa-bay-images', pixaBayImages);
 async function pixaBayImages(req, res) {
     try {
         console.log("[Server] POST route pixaBayImages");
-        const response = await axios.get(
-            `${req.body.baseURL}&key=${pixaBayApiKey}`
-        );
+        let url = `${req.body.baseURL}&key=${pixaBayApiKey}`;
+        console.log("url: ", url);
+        const response = await axios.get(url);
         res.send(response.data);
     } catch (error) {
         console.error("error", error);
