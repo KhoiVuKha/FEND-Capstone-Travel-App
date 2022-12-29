@@ -2,7 +2,22 @@
 Project Capstone FEND
 
 The goal of this project is to practice:
+- Setting up Webpack
+- Sass styles
+- Webpack Loaders and Plugins
+- Creating layouts and page design
+- Using APIs and creating requests to external urls.
+- Service workers
 
+## API used in this project
+**GeoNames**
+https://www.geonames.org/export/web-services.html
+
+**Weatherbit API**
+https://www.weatherbit.io/api
+
+**Pixabay Images**
+API Documentation: https://pixabay.com/api/docs/
 
 ## Prerequisite
 This project should run on a local server. 
@@ -51,10 +66,16 @@ npm run test
 ```
 
 ## Usage
-To use the app, enter a URL in the input field and press the **Submit** button. 
-Sentiment results will be displayed in the box below. 
-If a URL is invalid, the user will see an error message. The app is fully responsive.
+To use the app, You need:
+- Enter the destination you want to visit.
+- Select the departure date (Start date).
+- Select the return date (End date).
+And press the **search** button, app will query some API and return a result about 
+the place you looking for. 
 
+- User can able to save the trip to Local Storage so that when they close, then revisit the page, their information is still remain.
+- User can select the "Saved Trips" tab to display all destination of the trip.
+- User can able add new trip or delete all trip in "Saved Trips" tab.
 
 ## Demo
 
