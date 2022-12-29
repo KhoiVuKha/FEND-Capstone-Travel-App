@@ -5,7 +5,7 @@ import { getGeonameData } from './getGeoNameData.js';
 import { getWeatherForecast } from './getWeatherForecast.js';
 import { calculateDaysToGo } from './calculateDaysToGo.js';
 import { getPixabayImages } from './getPixabayImages.js';
-import { updateModal, displaySavedTrip } from './userInterfaceRenderer';
+import { displayPlanTrip, displaySavedTrip } from './userInterfaceRenderer';
 
 /* Global variables */
 const trip = {};
@@ -77,7 +77,7 @@ const handleSearchEvent = async (event) => {
         );
 
         // Display plan trip
-        updateModal(trip);
+        displayPlanTrip(trip);
     } else if (startDateInMs > endDateInMs) {
         alert('Return date should be after the start date');
     } else {
