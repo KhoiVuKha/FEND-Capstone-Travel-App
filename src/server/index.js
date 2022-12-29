@@ -106,3 +106,5 @@ app.listen(port, function() {
         console.error("Error config for PIXABAY_API_KEY");
     }
 })
+
+module.exports = app;
