@@ -71,11 +71,14 @@ To use the app, You need:
 - Select the departure date (Start date).
 - Select the return date (End date).
 And press the **search** button, app will query some API and return a result about 
-the place you looking for. 
+the place you are looking for. 
 
 - User can able to save the trip to Local Storage so that when they close, then revisit the page, their information is still remain.
 - User can select the "Saved Trips" tab to display all destination of the trip.
 - User can able add new trip or delete all trip in "Saved Trips" tab.
 
 ## Demo
+
+<img width="1439" alt="image" src="https://user-images.githubusercontent.com/15206083/209924835-08ee7696-bc5c-451b-a011-335d75e77be2.png">
+
 
