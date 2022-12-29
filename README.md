@@ -46,9 +46,14 @@ cd <project directory>
 npm install
 ```
 
-**4. Get MeaningCloud API key and insert to .env file**
+**4. Get GeoNames user name; Weatherbit, Pixabay Images API key and insert to .env file**
 
-Follow instruction in **Prerequisite** section. 
+The configs should be:
+```
+GEONAMES_USERNAME = *******************
+WEATHERBIT_API_KEY = ******************
+PIXABAY_API_KEY = *********************
+```
 
 **5. Build and run project**
 Afterwards, to start the server run these commands in command line:
