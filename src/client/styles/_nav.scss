@@ -10,10 +10,10 @@ nav {
 
 #title {
     display: flex;
-    font-family: 'Playfair Display', serif;
+    font-family: "Playfair Display", serif;
     font-size: 1.5em;
     letter-spacing: 0.05em;
-    color: #222;
+    color: #a31a1a;
     flex-flow: row nowrap;
     width: 100%;
     justify-content: center;
@@ -51,31 +51,31 @@ li {
     margin: 5px;
 }
 
-.item>a {
+.item > a {
     color: #222;
     padding: 8px 20px;
     border-radius: 2px;
 }
 
-.item>a:hover {
-    color: #ffffff !important;
-    background-color: #e54b4b;
-    border: 1px solid #e54b4b;
-}
-
-.item>a:active {
+.item > a:active {
     color: #222 !important;
-    background-color: #e54b4b;
-    border: 1px solid #e54b4b;
+    background-color: #696786;
+    border: 1.5px solid #696786;
 }
 
-.item>a.selected {
-    color: #222 !important;
-    border: 1px solid #e54b4b;
-}
-
-.item>a:visited {
+.item > a:visited {
     color: #222;
+}
+
+.item > a.selected {
+    color: #222 !important;
+    border: 1px solid #696786;
+}
+
+.item > a:hover {
+    color: #ffffff !important;
+    background-color: #696786;
+    border: 1.5px solid #696786;
 }
 
 @media (min-width: 768px) {

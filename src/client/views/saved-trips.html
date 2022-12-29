@@ -1,43 +1,41 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,500i,700|Playfair+Display:400,700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/2162da8111.js" crossorigin="anonymous"></script>
-    <title>Travel Planner</title>
-</head>
-
-<body>
-    <div id="parent-container">
-        <header>
-            <nav>
-                <div id="title">
-                    <div id="page-title">Travel Planner</div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,500i,700|Playfair+Display:400,700&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/2162da8111.js" crossorigin="anonymous"></script>
+        <title>Travel App</title>
+    </head>
+    <body>
+        <div id="parent-container">
+            <header>
+                <nav>
+                    <div id="title">
+                        <div id="page-title">Travel App</div>
+                    </div>
+                    <ul id="menu">
+                        <li class="item">
+                            <a class="nav-link" href="./index.html">Home</a>
+                        </li>
+                        <li class="item">
+                            <a class="nav-link selected" href="saved-trips.html">Saved Trips</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <section id="content">
+                <h1>Your Saved Trips</h1>
+                <div class="buttons">
+                    <button class="btn btn-secondary" id="btn-delete-all">Delete All</button>
+                    <button class="btn btn-secondary" id="btn-add-new-trip">Add new trip</button>
                 </div>
-                <ul id="menu">
-                    <li class="item">
-                        <a class="nav-link" href="./index.html">Home</a>
-                    </li>
-                    <li class="item">
-                        <a class="nav-link selected" href="saved-trips.html">Saved Trips</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        <section id="content">
-            <h1>Your Saved Trips</h1>
-            <div class="buttons">
-                <button class="btn btn-secondary" id="btn-delete-all">Delete All</button>
-                <button class="btn btn-secondary" id="btn-add-new-trip">Add new trip</button>
-            </div>
-            <div class="saved-trips"></div>
-        </section>
-        <footer>
-        </footer>
-    </div>
-</body>
-
+                <div class="saved-trips"></div>
+            </section>
+            <footer>
+                <em>&copy; Copyright 2022 KhoiVu</em>
+            </footer>
+        </div>
+    </body>
 </html>

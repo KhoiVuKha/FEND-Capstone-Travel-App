@@ -5,13 +5,12 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 14px;
     line-height: 1.6;
     background-color: #fffaf0;
     color: #222;
 }
-
 
 /* Typography */
 h1,
@@ -20,7 +19,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Playfair Display', serif;
+    font-family: "Playfair Display", serif;
     letter-spacing: 0.05em;
     margin: 0.2em 0;
     text-align: center;
@@ -56,32 +55,32 @@ p {
     margin: 1em 0 0;
 }
 
-p+p {
+p + p {
     margin: 0;
 }
 
 a {
     outline: none;
     text-decoration: none;
-    color: #e54b4b;
+    color: #e24444;
 }
 
 a:visited {
-    color: #e54b4b;
+    color: #e24444;
 }
 
 a:hover {
-    color: #F6AA1C;
+    color: #f6aa1c;
 }
 
 strong {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 700;
     letter-spacing: 0.05em;
 }
 
 em {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-style: 500i;
     letter-spacing: 0.05em;
 }
@@ -99,7 +98,7 @@ figcaption {
 }
 
 q {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-style: 500i;
     letter-spacing: 0.05em;
 }
@@ -120,7 +119,6 @@ blockquote:first-letter {
     padding-left: 3px;
 }
 
-
 /* Buttons */
 
 .btn {
@@ -137,46 +135,47 @@ blockquote:first-letter {
 
 .btn-primary {
     background-color: transparent;
-    border: 2px solid #e54b4b;
+    border: 2px solid #e24444;
     border-radius: 3px;
-    color: #e54b4b;
+    color: #e24444;
     transition: all 0.3s;
 }
 
 .btn-primary:hover {
-    background-color: #e54b4b;
-    border: 2px solid #e54b4b;
+    background-color: #e24444;
+    border: 2px solid #e24444;
     border-radius: 3px;
     color: #fffaf0;
     transform: scale(0.9);
 }
 
 .btn-primary:active {
-    background-color: #e54b4b;
-    border: 2px solid #e54b4b;
+    background-color: #e24444;
+    border: 2px solid #e24444;
     border-radius: 3px;
     color: #fffaf0;
     transform: scale(0.9);
 }
 
 .btn-secondary {
-    background-color: #e54b4b;
-    border: 2px solid #e54b4b;
+    background-color: #e24444;
+    border: 2px solid #e24444;
     color: #fffaf0;
     transition: all 0.3s;
+    border-radius: 20px;
 }
 
 .btn-secondary:hover {
     background-color: transparent;
-    border: 2px solid #e54b4b;
-    color: #e54b4b;
+    border: 2px solid #e24444;
+    color: #e24444;
     transform: scale(0.9);
 }
 
 .btn-secondary:active {
     background-color: transparent;
-    border: 2px solid #e54b4b;
-    color: #e54b4b;
+    border: 2px solid #e24444;
+    color: #e24444;
     transform: scale(0.9);
 }
 
