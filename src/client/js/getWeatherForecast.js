@@ -3,7 +3,7 @@ const getWeatherForecast = async (daysToGo, lat, lon) => {
     if (daysToGo > 7) weatherForecastFormat = 'daily';
 
     const weatherPostRequestBody = {
-        baseURL: `https://api.weatherbit.io/v2.0/current/${weatherForecastFormat}?lat=${lat}&lon=${lon}`,
+        baseURL: `https://api.weatherbit.io/v2.0/forecast/${weatherForecastFormat}?lat=${lat}&lon=${lon}`,
     };
 
     const weatherResponse = await fetch('http://localhost:8080/weather-bit-data', {
